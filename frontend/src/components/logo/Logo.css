@@ -1,0 +1,18 @@
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-right: auto;
+}
+
+.logo-icon {
+    color: var(--color-green);
+    width: 27px;
+    height: 27px;
+}
+
+.logo h1 {
+    font-size: 25px;
+    color: var(--color-green-dark);
+    font-weight: 600;
+}

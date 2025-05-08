@@ -1,9 +1,11 @@
 const express = require('express');
 const cors = require('cors');
 const { sequelize } = require('./models');
+const Device = require('./models/devices');
+const User = require('./models/users');
 
-const measuresRouter = require('./routes/measures');
-const usersRouter = require('./routes/users');
+const devicesRouter = require('./routes/devicesController');
+const usersRouter = require('./routes/usersController');
 
 const app = express();
 const PORT = 3000;
@@ -11,23 +13,25 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
-// Montar las rutas
-app.use('/api', measuresRouter);
+// Define relationships between models
+User.hasMany(Device, { foreignKey: 'userId' });
+Device.belongsTo(User, { foreignKey: 'userId' });
+
+// Mount routes
+app.use('/api/devices', devicesRouter);
 app.use('/api', usersRouter);
 
-// Conexión a la base de datos
+// Database connection
 sequelize.authenticate()
     .then(() => console.log('✅ Conectado a PostgreSQL con Sequelize'))
     .catch(err => console.error('❌ Error de conexión:', err));
 
-// Sincronizar modelos
-sequelize.sync()
+// Sync models - using { force: false } to prevent overwriting existing tables
+sequelize.sync({ alter: true })
     .then(() => console.log('📦 Modelos sincronizados'))
     .catch(err => console.error('❌ Error al sincronizar modelos:', err));
 
-// Iniciar servidor
+// Start server
 app.listen(PORT, () => {
     console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
 });
-
-

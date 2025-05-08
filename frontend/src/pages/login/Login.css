@@ -10,7 +10,7 @@
     --color-error: #f44336;
 }
 
-.signup-container {
+.login-container {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -20,7 +20,7 @@
     position: relative;
 }
 
-.signup-logo-container {
+.login-logo-container {
     position: absolute;
     top: 1.5rem;
     left: 1.5rem;
@@ -38,9 +38,8 @@
     align-items: flex-start;
 }
 
-
-/* Signup card */
-.signup-content {
+/* Login card */
+.login-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,29 +51,29 @@
     box-shadow: 0 8px 24px rgba(46, 125, 50, 0.08);
 }
 
-.signup-header {
+.login-header {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.signup-header h2 {
+.login-header h2 {
     color: var(--color-green-dark);
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
-.signup-header p {
+.login-header p {
     color: var(--color-text-light);
     font-size: 1rem;
 }
 
-.signup-form {
+.login-form {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
-    min-height: 400px;
+    gap: 1.5rem;
+    min-height: 300px;
     padding: 2rem;
 }
 
@@ -124,7 +123,7 @@
     color: #aaa;
 }
 
-.signup-button {
+.login-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,24 +140,24 @@
     margin-top: 1rem;
 }
 
-.signup-button:hover {
+.login-button:hover {
     background-color: var(--color-green-dark);
 }
 
-.signup-footer {
+.login-footer {
     margin-top: 1.5rem;
     text-align: center;
     color: var(--color-text-light);
     font-size: 0.875rem;
 }
 
-.signup-footer a {
+.login-footer a {
     color: var(--color-green);
     text-decoration: none;
     font-weight: 500;
 }
 
-.signup-footer a:hover {
+.login-footer a:hover {
     text-decoration: underline;
 }
 
@@ -168,22 +167,21 @@
     gap: 1rem;
     padding: 2rem 1.5rem;
     width: 100%;
-    max-width: 320px; /* Set a max-width for the eco-benefits */
+    max-width: 320px;
     background-color: var(--color-green-light);
     border-radius: 12px;
     box-sizing: border-box;
     justify-content: center;
-    height: 100%; /* 👈 added */
-    overflow: auto; /* optional, handles overflow if content grows */
+    height: 100%;
+    overflow: auto;
 }
-.input-field.error {
-    border-color: var(--color-error);
-    box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.2); /* Red shadow for error */
-}
-
-.error-message {
-    color: var(--color-error);
-    font-size: 0.875rem;
-    margin-top: 0.5rem;
+.error-box {
+    background-color: #ffdddd;
+    color: #d8000c;
+    border: 1px solid #d8000c;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
     text-align: center;
 }
+

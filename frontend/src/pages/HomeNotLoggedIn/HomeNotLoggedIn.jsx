@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Leaf, Home, BarChart3, Users, LogIn } from 'lucide-react';
+import { BarChart3, Users, LogIn, Home, Leaf } from 'lucide-react';
 import './HomeNotLoggedIn.css';
-
+import Logo from '../../components/logo/Logo.jsx';
 const HomeNotLoggedIn = () => {
     const navigate = useNavigate();
 
@@ -10,17 +10,17 @@ const HomeNotLoggedIn = () => {
     const handleNavigateToSignup = () => {
         navigate('/signup');
     };
+    const handleNavigateToLogin = () => {
+        navigate('/login');
+    };
 
     return (
         <div className="home-container">
             {/* Navigation Bar */}
             <nav className="navbar">
-                <div className="logo">
-                    <Leaf className="logo-icon" />
-                    <h1 id={"title"}>VoltControl</h1>
-                </div>
+                <Logo />
                 <div className="nav-buttons">
-                    <button className="btn btn-login">
+                    <button className="btn btn-login" onClick={handleNavigateToLogin}>
                         <LogIn size={18} />
                         <span>Login</span>
                     </button>
