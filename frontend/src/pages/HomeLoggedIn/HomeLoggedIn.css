@@ -210,7 +210,7 @@ body {
 
 .device-status.off {
     background: #f8eae1;
-    color: #c7775a;
+    color: red;
 }
 
 .device-image-container {

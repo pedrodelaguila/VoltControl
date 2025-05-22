@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from "./pages/login/Login.jsx";
 import HomeNotLoggedIn from "./pages/HomeNotLoggedIn/HomeNotLoggedIn.jsx";
 import HomeLoggedIn from "./pages/HomeLoggedIn/HomeLoggedIn.jsx";
-import Signup from "./pages/Signup/Signup.jsx";
+import Signup from "./pages/signup/Signup.jsx";
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('token'));
